@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>surway form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+    let starRate = document.querySelector("#starRate");
+document.querySelectorAll(".star").forEach(input=>{
+  input.addEventListener("click",(e)=>{
+    starRate.value = e.target.value;
+    starRate.setAttribute("type","text");
+  })
+})
+</script>
+<style>
+    span{
+            color: red;
+        }
+        .inputsWrapper{
+  width: 270px;
+  display: flex;
+  flex-direction:row-reverse;
+  justify-content:space-between;
+}
+
+input.star { display: none; }
+
+label.star {
+float: center;
+padding: 10px;
+font-size: 20px;
+color: #444;
+cursor:pointer;
+}
+
+input.star:checked ~ label.star:before {
+content: '\f005';
+color: #FD4;
+}
+
+input.star-5:checked ~ label.star:before {
+color: #FE7;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+
+label.star:before {
+content: '\f006';
+font-family: FontAwesome;
+}
+
+#starRate{
+ width:20px;
+  display:block;
+}
+        
+</style>
+</head>
+<body>
+    <div class="name">
+        <h5>Name<span>*</span></h5>
+        <table>
+            <tr>
+                <td>
+                   
+  <input   type="text"  id="fname" name="fname">
+
+                </td>
+                <td  style="padding-left: 20px;">
+                    <input type="text"  id="fname" name="fname">
+                   
+                </td>
+            </tr>
+            <tr>
+                <td >  <label for="fname">First</label></td>
+               <td  style="padding-left: 20px;"><label for="fname">last</label></td> 
+            </tr>
+            
+        </table>
+    </div>
+    <div class="email">
+        <h5>Email<span>*</span></h5>
+        <table>
+            <tr>
+                <td>
+                   
+  <input   type="text"  id="fname" name="fname"  style="width: 400px;"><br>
+
+                </td>
+                </tr>
+        </table>
+        
+
+    </div>
+    <div class="experience">
+        <br><h5>Your Experiance<span>*</span></h5>
+        <table>
+            <tr> 
+          <th style="vertical-align:middle">Your Rating</th>
+          
+          <td class="inputsWrapper">
+              <input class="star star-5" id="star-5" type="radio" name="rating" value="5" 
+              />
+              <label class="star star-5" for="star-5"></label>
+              <input class="star star-4" id="star-4" type="radio" name="rating" value="4" 
+              />
+              <label class="star star-4" for="star-4"></label>
+              <input class="star star-3" id="star-3" type="radio" name="rating" value="3" 
+              />
+              <label class="star star-3" for="star-3"></label>
+              <input class="star star-2" id="star-2" type="radio" name="rating" value="2" 
+              />
+              <label class="star star-2" for="star-2"></label>
+              <input class="star star-1" id="star-1" type="radio" name="rating" value="1" 
+             />
+              <label class="star star-1" for="star-1"></label>
+            <input class="form-control" type="hidden" id="starRate" name="starRate" readonly/>
+          </td>
+          </tr>
+          </table>
+            
+    </div>
+    <div class=heading>
+        <h5>How satisfied are you with<span>*</span></h5>
+    </div>
+    <div class="table-responsive-sm">
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">very unsatisfied</th>
+            <th scope="col">unsatisfied</th>
+            <th scope="col">neutal</th>
+            <th scope="col">satisfied</th>
+            <th scope="col">very satisfied</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">purchase</th>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+          </tr>
+          <tr>
+            <th scope="row">service</th>
+
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+          </tr>
+          <tr>
+            <th scope="row">overall</th>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td><br>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <div class=heading>
+       <br> <h5>How likely you are too<span>*</span></h5>
+    </div>
+    <div class="table-responsive-md">
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">very unlikely</th>
+            <th scope="col">unlikely</th>
+            <th scope="col">neutal</th>
+            <th scope="col">likely</th>
+            <th scope="col">very unlikely</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">buy from us again</th>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+          </tr>
+          <tr>
+            <th scope="row">recomend our product to others</th>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+          </tr>
+          <tr>
+            <th scope="row">recommend our company to other</th>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+            <td><input type="radio" name="" id="" class="range"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <div class="text">
+          <h5>Additional comments or suggestions</h5>
+      </div>
+
+      <div style="padding-left: 20px;">
+        <label for="text"></label>
+
+        <textarea id="text" name="text" rows="7" cols="200">
+
+      
+          
+
+</textarea>
+<input type="submit" value="Submit">
+</div>
+      
+    
+</body>
+</html>
